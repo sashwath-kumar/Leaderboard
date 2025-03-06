@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           io.datatroops.controllers.HomeController.index()
+
+GET    /data/:id                    io.datatroops.controllers.HomeController.getIdData(id)
+
+POST   /getTournaments              io.datatroops.controllers.TournamentController.getTournaments
+
+GET    /swagger-json                io.datatroops.swagger.SwaggerSpecController.specs
+
+GET    /swagger                     io.datatroops.swagger.SwaggerSpecController.ui

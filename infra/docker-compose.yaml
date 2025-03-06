@@ -1,0 +1,13 @@
+services:
+  tournament-service-db:
+    image: postgres:latest
+    container_name: tournament-service-db
+    environment:
+      POSTGRES_DB: tournament-service
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

@@ -1,0 +1,65 @@
+swagger: "2.0"
+info:
+  title: "Tournament-Service"
+  version: "0.0.1"
+  description: "Good"
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: routes
+    description: This is routes
+  - name: tournaments
+    description: This is tournament
+paths:
+  /data/{id}:
+    get:
+      summary: Get data by ID
+      operationId: getIdData
+      tags:
+        - routes
+      parameters:
+        - name: id
+          in: path                     # Changed 'body' to 'path' (IDs are typically path parameters)
+          required: true
+          description: The unique identifier for the data
+          type: string                 # 'schema' is not valid for parameters in OpenAPI 2.0; use 'type'
+      responses:
+        '200':
+          description: Successfully retrieved data
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: The unique identifier for the data
+              data:
+                type: string
+                description: The retrieved data
+        '404':
+          description: Data not found
+        '500':
+          description: Internal server error
+
+  /getTournaments:
+    post:
+      summary: Getting the Tournaments
+      operationId: getTournaments
+      tags:
+        - tournaments
+      description: Return the Tournaments data
+      parameters:
+        - in: body
+          name: body
+          required: true
+          description: Request body containing the filters for tournaments
+          schema:
+            $ref: '#/definitions/io.datatroops.controllers.models.GetTournaments'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/io.datatroops.domain.models.Tournament'
+        '404':
+          description: Not Found

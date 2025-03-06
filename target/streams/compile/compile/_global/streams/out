@@ -1,0 +1,14 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/saswanth/tournament-service/app/io/datatroops/dao/GameSessionTable.scala:16:21: The method `apply` is inserted. The auto insertion will be deprecated, please write `(io.datatroops.domain.models.GameSession.apply _).tupled` explicitly.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  ) <> (GameSession.tupled, GameSession.unapply)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/saswanth/tournament-service/app/io/datatroops/dao/TournamentWinningPlaces.scala:21:87: The method `apply` is inserted. The auto insertion will be deprecated, please write `(io.datatroops.domain.models.TournamentWinningPlace.apply _).tupled` explicitly.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def * = (tournamentId, place, prizeId, consolationPlace) <> (TournamentWinningPlace.tupled, TournamentWinningPlace.unapply)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/saswanth/tournament-service/app/io/datatroops/dao/Tournaments.scala:59:25: The method `apply` is inserted. The auto insertion will be deprecated, please write `(io.datatroops.domain.models.TournamentTable.apply _).tupled` explicitly.[0m
+[0m[[0m[33mwarn[0m] [0m[0m  ) <> (TournamentTable.tupled, TournamentTable.unapply)[0m
+[0m[[0m[33mwarn[0m] [0m[0m                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/saswanth/tournament-service/app/io/datatroops/domain/models/TournamentPlayer.scala:10:16: Implicit definition should have explicit type (inferred play.api.libs.json.OFormat[io.datatroops.domain.models.TournamentPlayer]) [quickfixable][0m
+[0m[[0m[33mwarn[0m] [0m[0m  implicit val format = Json.format[TournamentPlayer][0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m6 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
