@@ -1,0 +1,155 @@
+{
+  "paths" : {
+    "/" : {
+      "get" : {
+        "operationId" : "index",
+        "tags" : [ "routes" ]
+      }
+    },
+    "/data/{id}" : {
+      "get" : {
+        "operationId" : "getIdData",
+        "tags" : [ "routes" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "description" : "The unique identifier for the data",
+          "type" : "string"
+        } ],
+        "summary" : "Get data by ID",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully retrieved data",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "string",
+                  "description" : "The unique identifier for the data"
+                },
+                "data" : {
+                  "type" : "string",
+                  "description" : "The retrieved data"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Data not found"
+          },
+          "500" : {
+            "description" : "Internal server error"
+          }
+        }
+      }
+    },
+    "/getTournaments" : {
+      "post" : {
+        "operationId" : "getTournaments",
+        "tags" : [ "tournaments" ],
+        "summary" : "Getting the Tournaments",
+        "description" : "Return the Tournaments data",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : true,
+          "description" : "Request body containing the filters for tournaments",
+          "schema" : {
+            "$ref" : "#/definitions/io.datatroops.controllers.models.GetTournaments"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/io.datatroops.domain.models.Tournament"
+            }
+          },
+          "404" : {
+            "description" : "Not Found"
+          }
+        }
+      }
+    },
+    "/swagger-json" : {
+      "get" : {
+        "operationId" : "specs",
+        "tags" : [ "routes" ]
+      }
+    },
+    "/swagger" : {
+      "get" : {
+        "operationId" : "ui",
+        "tags" : [ "routes" ]
+      }
+    }
+  },
+  "definitions" : {
+    "io.datatroops.domain.models.Tournament" : {
+      "properties" : {
+        "id" : {
+          "type" : "uuid"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "enabled" : {
+          "type" : "boolean"
+        },
+        "startTime" : {
+          "type" : "java.sql.timestamp"
+        },
+        "endTime" : {
+          "type" : "java.sql.timestamp"
+        },
+        "gameId" : {
+          "type" : "uuid"
+        },
+        "startingBalance" : {
+          "type" : "math.bigdecimal"
+        },
+        "winningPlaces" : {
+          "type" : "array",
+          "items" : {
+            "type" : "io.datatroops.domain.models.winningplace"
+          }
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "required" : [ "id", "name", "description", "enabled", "startTime", "endTime", "gameId", "startingBalance", "winningPlaces", "status" ]
+    },
+    "io.datatroops.controllers.models.GetTournaments" : {
+      "properties" : {
+        "status" : {
+          "type" : "string"
+        },
+        "userId" : {
+          "type" : "uuid"
+        }
+      },
+      "required" : [ "status", "userId" ]
+    }
+  },
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "Tournament-Service",
+    "version" : "0.0.1",
+    "description" : "Good"
+  },
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "tags" : [ {
+    "name" : "routes",
+    "description" : "This is routes"
+  }, {
+    "name" : "tournaments",
+    "description" : "This is tournament"
+  } ],
+  "host" : "localhost:9000"
+}

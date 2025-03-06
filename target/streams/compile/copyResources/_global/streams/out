@@ -1,12 +1,12 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/logback.xml,/Users/saswanth/tournament-service/target/scala-2.13/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/messages,/Users/saswanth/tournament-service/target/scala-2.13/classes/messages)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/swagger.yml,/Users/saswanth/tournament-service/target/scala-2.13/classes/swagger.yml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/application.conf,/Users/saswanth/tournament-service/target/scala-2.13/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/swaggerUI.html,/Users/saswanth/tournament-service/target/scala-2.13/classes/swaggerUI.html)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/routes,/Users/saswanth/tournament-service/target/scala-2.13/classes/routes)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/evolutions/default/4.sql,/Users/saswanth/tournament-service/target/scala-2.13/classes/evolutions/default/4.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/evolutions/default/5.sql,/Users/saswanth/tournament-service/target/scala-2.13/classes/evolutions/default/5.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/evolutions/default/2.sql,/Users/saswanth/tournament-service/target/scala-2.13/classes/evolutions/default/2.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/evolutions/default/3.sql,/Users/saswanth/tournament-service/target/scala-2.13/classes/evolutions/default/3.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/tournament-service/conf/evolutions/default/1.sql,/Users/saswanth/tournament-service/target/scala-2.13/classes/evolutions/default/1.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/logback.xml,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/messages,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/messages)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/swagger.yml,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/swagger.yml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/application.conf,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/swaggerUI.html,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/swaggerUI.html)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/routes,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/evolutions/default/4.sql,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/evolutions/default/4.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/evolutions/default/5.sql,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/evolutions/default/5.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/evolutions/default/2.sql,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/evolutions/default/2.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/evolutions/default/3.sql,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/evolutions/default/3.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/saswanth/workspace/Leaderboard/conf/evolutions/default/1.sql,/Users/saswanth/workspace/Leaderboard/target/scala-2.13/classes/evolutions/default/1.sql)[0m

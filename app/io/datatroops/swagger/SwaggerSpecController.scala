@@ -10,6 +10,9 @@ import java.util.stream.Collectors
 import javax.inject.Inject
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.Try
+import java.nio.file.{Files, Paths}
+import play.api.libs.json.Json
+import play.api.Logger
 
 class SwaggerSpecController @Inject()(
                                        cc: ControllerComponents,
@@ -23,19 +26,24 @@ class SwaggerSpecController @Inject()(
     Future
       .fromTry(generateSwaggerJson())
       .map(appendDefaultHostAndPort)
-      .map(s => Ok(s))
+      .map { swaggerJson =>
+        Try {
+          val jsonString = Json.prettyPrint(swaggerJson)
+          println("Swagger Json Created")
+          val filePath = Paths.get("swagger.json")
+          Files.write(filePath, jsonString.getBytes)
+        }.recover {
+          case e => 
+            Logger(getClass).error(s"Failed to save swagger.json: ${e.getMessage}", e)
+        }
+        Ok(swaggerJson)
+      }
   }
 
-  /**
-   * Append default host and port to Swagger JSON
-   */
   private def appendDefaultHostAndPort(swaggerJson: JsObject): JsObject = {
     swaggerJson + ("host" -> JsString("localhost:9000"))
   }
 
-  /**
-   * Generate Swagger JSON using the configured packages
-   */
   private def generateSwaggerJson(): Try[JsObject] = Try {
     val exacompPackages: Seq[String] =
       Try(configuration.get[Seq[String]]("swagger.exacomp.packages")).getOrElse(Seq.empty)
@@ -46,14 +54,9 @@ class SwaggerSpecController @Inject()(
     SwaggerSpecGenerator(modelQualifier = prefixDomainModelQualifier)
   }.flatMap(_.generate("routes"))
 
-  /**
-   * Swagger specs endpoint
-   */
+
   def specs: Action[AnyContent] = swagger
 
-  /**
-   * Serve Swagger UI HTML file
-   */
   def ui: Action[AnyContent] = Action { _ =>
     Try {
       val inputStream: InputStream = this.getClass.getResourceAsStream("/swaggerUI.html")

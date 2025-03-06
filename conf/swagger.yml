@@ -21,10 +21,10 @@ paths:
         - routes
       parameters:
         - name: id
-          in: path                     # Changed 'body' to 'path' (IDs are typically path parameters)
+          in: path
           required: true
           description: The unique identifier for the data
-          type: string                 # 'schema' is not valid for parameters in OpenAPI 2.0; use 'type'
+          type: string
       responses:
         '200':
           description: Successfully retrieved data
