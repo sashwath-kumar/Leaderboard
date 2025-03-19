@@ -19,6 +19,14 @@ jobs:
         distribution: 'temurin'
         java-version: '11'
 
+    - name: Install SBT
+      run: |
+        echo "Installing SBT..."
+        curl -L -o sbt.deb https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.5.5.deb
+        sudo dpkg -i sbt.deb
+        sudo apt-get update
+        sudo apt-get install sbt
+
     - name: Build project
       run: sbt compile
 
