@@ -12,7 +12,7 @@ window.onload = function() {
     ],
     layout: "StandaloneLayout",
     requestInterceptor: function(request) {
-      const apiUrl = 'https://sashwath-kumar.github.io/Leaderboard/'; 
+      const apiUrl = 'https://sashwath-kumar.github.io/'; 
       if (request.url.startsWith('/')) {
         request.url = apiUrl + request.url;
       }
