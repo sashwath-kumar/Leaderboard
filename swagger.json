@@ -150,6 +150,5 @@
   }, {
     "name" : "tournaments",
     "description" : "This is tournament"
-  } ],
-  "host" : "localhost:9000"
+  } ]
 }

@@ -25,7 +25,7 @@ class SwaggerSpecController @Inject()(
   private lazy val swagger = Action.async { _ =>
     Future
       .fromTry(generateSwaggerJson())
-      .map(appendDefaultHostAndPort)
+//      .map(appendDefaultHostAndPort)
       .map { swaggerJson =>
         Try {
           val jsonString = Json.prettyPrint(swaggerJson)
@@ -40,9 +40,9 @@ class SwaggerSpecController @Inject()(
       }
   }
 
-  private def appendDefaultHostAndPort(swaggerJson: JsObject): JsObject = {
-    swaggerJson + ("host" -> JsString("localhost:9000"))
-  }
+//  private def appendDefaultHostAndPort(swaggerJson: JsObject): JsObject = {
+//    swaggerJson + ("host" -> JsString("localhost:9000"))
+//  }
 
   private def generateSwaggerJson(): Try[JsObject] = Try {
     val exacompPackages: Seq[String] =
