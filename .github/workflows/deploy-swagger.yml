@@ -65,8 +65,7 @@ jobs:
               ],
               layout: "StandaloneLayout",
               requestInterceptor: function(request) {
-                // Replace with your actual API URL in production
-                const apiUrl = 'http://localhost:9000'; 
+                const apiUrl = 'https://sashwath-kumar.github.io/Leaderboard/'; 
                 if (request.url.startsWith('/')) {
                   request.url = apiUrl + request.url;
                 }
