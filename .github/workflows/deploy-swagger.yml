@@ -22,28 +22,23 @@ jobs:
       - name: Install SBT
         run: |
           echo "Installing SBT..."
-          curl -L -o sbt.deb https://github.com/sbt/sbt/releases/download/v1.5.5/sbt-1.5.5.deb
-          sudo dpkg -i sbt.deb
+          echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+          echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee /etc/apt/sources.list.d/sbt_old.list
+          curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add
           sudo apt-get update
-          sudo apt-get install sbt
+          sudo apt-get install -y sbt
 
       - name: Build project
         run: sbt compile
-
-      # Add step to generate OpenAPI spec if not already in conf directory
-      - name: Generate OpenAPI spec
-        run: |
-          # If you need to generate the spec file, uncomment and modify this line:
-          # sbt "runMain your.package.GenerateSwaggerSpec"
-          
-          # Create directory for Swagger UI
-          mkdir -p swagger-ui
 
       - name: Setup Swagger UI
         run: |
           # Download and extract Swagger UI
           wget https://github.com/swagger-api/swagger-ui/archive/refs/tags/v4.15.5.zip
           unzip v4.15.5.zip
+          
+          # Create directory for Swagger UI
+          mkdir -p swagger-ui
           
           # Copy Swagger UI files
           cp -r swagger-ui-4.15.5/dist/* swagger-ui/
@@ -71,7 +66,7 @@ jobs:
               layout: "StandaloneLayout",
               requestInterceptor: function(request) {
                 // Replace with your actual API URL in production
-                const apiUrl = 'https://sashwath-kumar.github.io'; 
+                const apiUrl = 'http://localhost:9000'; 
                 if (request.url.startsWith('/')) {
                   request.url = apiUrl + request.url;
                 }
